@@ -26,6 +26,7 @@
 package ch.heigvd.sym.template;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
 				String mail = email.getText().toString();
 				String passwd = pass.getText().toString();; //TODO read password from EditText
 				if (isValid(mail, passwd)) {
+					Intent intent = new Intent(getBaseContext(), ch.heigvd.sym.template.BasicActivity.class);
+					intent.putExtra("emailEntered", mail);
+				 	intent.putExtra("passwordGiven", passwd);
+					Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
+				 	startActivity(intent);
 					/* Ok, valid combination, do something or launch another activity...
 					 * The current activity could be finished, but it is not mandatory.
 					 * To launch activity MyActivity.class, try something like :
@@ -88,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 					 * If you haven't anything more to do, you may finish()...
 					 * But just display a small message before quitting...
 					 */
-					Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
+					Toast.makeText(MainActivity.this, getResources().getString(R.string.bye), Toast.LENGTH_LONG).show();
 					finish();
 				} else {
 					// Wrong combination, display pop-up dialog and stay on login screen
