@@ -6,7 +6,7 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="353dp"
+        android:layout_width="295dp"
         android:layout_height="wrap_content"
         android:hint="@string/email"
         android:inputType="textEmailAddress" >
@@ -14,9 +14,19 @@
         <requestFocus />
     </EditText>
 
+    <EditText
+            android:id="@+id/pass"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/psw"
+            android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
     <Button
         android:id="@+id/buttOk"
-        android:layout_width="358dp"
+        android:layout_width="295dp"
         android:layout_height="wrap_content"
         android:text="@string/signin" />
 
