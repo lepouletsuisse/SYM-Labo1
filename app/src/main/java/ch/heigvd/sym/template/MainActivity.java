@@ -26,8 +26,6 @@
 package ch.heigvd.sym.template;
 
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -50,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     // GUI elements
 	private EditText email      = null;
     private Button   signIn     = null;
+	private EditText   pass     = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 		// Link to GUI elements
         this.email      = (EditText) findViewById(R.id.email);
+		this.pass       = (EditText) findViewById(R.id.pass);
         this.signIn     = (Button)   findViewById(R.id.buttOk);
 
 		// Then program action associated to "Ok" button
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 				 * combination given is valid or not
 				 */
 				String mail = email.getText().toString();
-				String passwd = null; //TODO read password from EditText
+				String passwd = pass.getText().toString();; //TODO read password from EditText
 				if (isValid(mail, passwd)) {
 					/* Ok, valid combination, do something or launch another activity...
 					 * The current activity could be finished, but it is not mandatory.
@@ -113,10 +113,7 @@ public class MainActivity extends AppCompatActivity {
 		 * Pop-up dialog to show error
 		 */
 		AlertDialog.Builder alertbd = new AlertDialog.Builder(this);
-
-        //alertbd.setIcon(android.R.drawable.ic_dialog_alert);
-		alertbd.setIcon(R.drawable.attention);
-
+        alertbd.setIcon(android.R.drawable.ic_dialog_alert);
 		alertbd.setTitle(R.string.wronglogin);
 	    alertbd.setMessage(R.string.wrong);
 	    alertbd.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
