@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Modèle Activité</string>
+    <string name="email">E-mail</string>
+    <string name="psw">Mot de passe</string>
+    <string name="signin">Connexion</string>
+    <string name="wronglogin">Connexion échouée</string>
+    <string name="wrong">Email or mot de passe faux</string>
+    <string name="good">Connexion valide, Bienvenue!</string>
+    
+</resources>
