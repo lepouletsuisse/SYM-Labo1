@@ -14,6 +14,16 @@
         <requestFocus />
     </EditText>
 
+    <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/psw"
+            android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
     <Button
         android:id="@+id/buttOk"
         android:layout_width="match_parent"
