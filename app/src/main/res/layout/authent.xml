@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" >
+        android:inputType="textEmailAddress"
+        android:layout_centerHorizontal="true">
 
         <requestFocus />
     </EditText>
@@ -19,15 +20,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/psw"
-            android:inputType="textPassword" >
+            android:inputType="textPassword"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true">
 
         <requestFocus />
     </EditText>
 
     <Button
         android:id="@+id/buttOk"
-        android:layout_width="match_parent"
+        android:layout_width="295dp"
         android:layout_height="wrap_content"
-        android:text="@string/signin" />
+        android:text="@string/signin"
+        android:layout_below="@+id/pass"
+        android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+</RelativeLayout>
