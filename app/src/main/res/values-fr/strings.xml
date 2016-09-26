@@ -9,5 +9,6 @@
     <string name="wrong">Email or mot de passe faux</string>
     <string name="good">Connexion valide, Bienvenue!</string>
     <string name="bye">Au revoir!</string>
-    
+    <string name="logout">Déconnecté</string>
+
 </resources>

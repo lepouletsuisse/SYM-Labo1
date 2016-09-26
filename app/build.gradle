@@ -15,6 +15,9 @@ android {
         targetSdkVersion 22
         versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        jackOptions {
+            enabled true
+        }
     }
     buildTypes {
         release {

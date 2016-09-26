@@ -10,5 +10,6 @@
     <string name="good">Valid login, welcome !</string>
     <string name="title_activity_basic">BasicActivity</string>
     <string name="bye">Goodbye!</string>
+    <string name="logout">Logout</string>
 
 </resources>

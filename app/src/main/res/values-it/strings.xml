@@ -9,5 +9,7 @@
     <string name="wrong">Email or Password not recognized</string>
     <string name="good">Valid login, welcome !</string>
     <string name="bye">A vider der shi!</string>
-    
+    <string name="logout">Logout</string>
+
+
 </resources>

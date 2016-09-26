@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 					 * If you haven't anything more to do, you may finish()...
 					 * But just display a small message before quitting...
 					 */
-					finish();
 				} else {
 					// Wrong combination, display pop-up dialog and stay on login screen
 					showErrorDialog(mail, passwd);
@@ -128,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
 	        }
 	     });
 	    alertbd.show();
+	}
+
+	@Override
+	public void onBackPressed() {
+		Toast.makeText(MainActivity.this, getResources().getString(R.string.bye), Toast.LENGTH_LONG).show();
+		finish();
 	}
 	
 }
