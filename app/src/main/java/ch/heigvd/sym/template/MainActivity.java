@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     // Just for test purposes : please destroy !
-	private static final String validEmail      = "toto@tutu.com";
-	private static final String validPassword   = "tata";
+	private static final String validEmail      = "a";
+	private static final String validPassword   = "a";
 
     // GUI elements
 	private EditText email      = null;
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 					 * If you haven't anything more to do, you may finish()...
 					 * But just display a small message before quitting...
 					 */
-					Toast.makeText(MainActivity.this, getResources().getString(R.string.bye), Toast.LENGTH_LONG).show();
 					finish();
 				} else {
 					// Wrong combination, display pop-up dialog and stay on login screen
