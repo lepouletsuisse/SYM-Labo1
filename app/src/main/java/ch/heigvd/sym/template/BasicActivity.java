@@ -1,10 +1,16 @@
 package ch.heigvd.sym.template;
 
 import android.app.Activity;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 
 public class BasicActivity extends AppCompatActivity {
 
@@ -19,8 +25,10 @@ public class BasicActivity extends AppCompatActivity {
         TextView text_email = (TextView)findViewById(R.id.textEmail);
         text_email.setText("Login: " + extras.getString("emailEntered"));
 
-        TextView text_pass = (TextView)findViewById(R.id.textPass);
-        text_pass.setText("Password: " + extras.getString("passwordGiven"));
+        ImageView image = (ImageView) findViewById(R.id.image);
+        File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "picture.png");
+        Uri uri = Uri.fromFile(f);
+        image.setImageURI(uri);
 
         Button button = (Button)findViewById(R.id.buttLogout);
         button.setText(R.string.logout);

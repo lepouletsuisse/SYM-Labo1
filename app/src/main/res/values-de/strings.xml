@@ -10,6 +10,7 @@
     <string name="good">Valid login, welcome !</string>
     <string name="bye">Auf wiedersehn!</string>
     <string name="logout">Logout</string>
+    <string name="image">Image</string>
 
 
 </resources>
