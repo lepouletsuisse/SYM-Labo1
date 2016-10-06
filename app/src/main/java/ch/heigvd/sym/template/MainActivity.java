@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("passwordGiven", passwd);
                         Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
                         startActivityForResult(intent, RESULT_BASIC);
-					/* Ok, valid combination, do something or launch another activity...
+                    /* Ok, valid combination, do something or launch another activity...
 					 * The current activity could be finished, but it is not mandatory.
 					 * To launch activity MyActivity.class, try something like :
 					 * 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         pass.setText("");
                     }
                 } else {
-                    showErrorDialog(mail);
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.wrongemail), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -137,23 +137,6 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertbd = new AlertDialog.Builder(this);
         alertbd.setIcon(android.R.drawable.ic_dialog_alert);
         alertbd.setTitle(R.string.wronglogin);
-        alertbd.setMessage(R.string.wrong);
-        alertbd.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                // we do nothing...
-                // dialog close automatically
-            }
-        });
-        alertbd.show();
-    }
-
-    protected void showErrorDialog(String mail) {
-		/*
-		 * Pop-up dialog to show error
-		 */
-        AlertDialog.Builder alertbd = new AlertDialog.Builder(this);
-        alertbd.setIcon(android.R.drawable.ic_dialog_alert);
-        alertbd.setTitle(R.string.wrongEmail);
         alertbd.setMessage(R.string.wrong);
         alertbd.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
