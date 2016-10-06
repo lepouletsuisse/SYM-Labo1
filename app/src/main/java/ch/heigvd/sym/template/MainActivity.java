@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         pass.setText("");
                     }
                 } else {
-                    showErrorDialog(mail, passwd);
+                    showErrorDialog(mail);
                 }
             }
 
@@ -137,6 +137,23 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertbd = new AlertDialog.Builder(this);
         alertbd.setIcon(android.R.drawable.ic_dialog_alert);
         alertbd.setTitle(R.string.wronglogin);
+        alertbd.setMessage(R.string.wrong);
+        alertbd.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // we do nothing...
+                // dialog close automatically
+            }
+        });
+        alertbd.show();
+    }
+
+    protected void showErrorDialog(String mail) {
+		/*
+		 * Pop-up dialog to show error
+		 */
+        AlertDialog.Builder alertbd = new AlertDialog.Builder(this);
+        alertbd.setIcon(android.R.drawable.ic_dialog_alert);
+        alertbd.setTitle(R.string.wrongEmail);
         alertbd.setMessage(R.string.wrong);
         alertbd.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
