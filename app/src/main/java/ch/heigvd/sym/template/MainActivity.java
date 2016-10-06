@@ -143,11 +143,11 @@ public class MainActivity extends AppCompatActivity {
 		if(requestCode == RESULT_BASIC){
 			if(resultCode == Activity.RESULT_OK){
 				Toast.makeText(MainActivity.this, getResources().getString(R.string.normalBack), Toast.LENGTH_LONG).show();
-				//Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
 			}
 			if(resultCode == Activity.RESULT_CANCELED){
 				Toast.makeText(MainActivity.this, getResources().getString(R.string.backed), Toast.LENGTH_LONG).show();
-				//Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
 			}
 		}
 	}
