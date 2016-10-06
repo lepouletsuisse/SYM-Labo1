@@ -11,5 +11,6 @@
     <string name="good">Connexion valide, Bienvenue!</string>
     <string name="bye">Au revoir!</string>
     <string name="logout">Déconnecté</string>
+    <string name="image">Image</string>
 
 </resources>

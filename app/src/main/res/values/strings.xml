@@ -14,5 +14,6 @@
     <string name="logout">Logout</string>
     <string name="backed">You pressed the back button!</string>
     <string name="normalBack">you backed in the correct way!</string>
+    <string name="image">Image</string>
 
 </resources>

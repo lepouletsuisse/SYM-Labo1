@@ -1,10 +1,19 @@
 package ch.heigvd.sym.template;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 
 public class BasicActivity extends AppCompatActivity {
 
@@ -19,8 +28,12 @@ public class BasicActivity extends AppCompatActivity {
         TextView text_email = (TextView)findViewById(R.id.textEmail);
         text_email.setText("Login: " + extras.getString("emailEntered"));
 
-        TextView text_pass = (TextView)findViewById(R.id.textPass);
-        text_pass.setText("Password: " + extras.getString("passwordGiven"));
+        TextView text_IMEI = (TextView)findViewById(R.id.imei);
+        text_IMEI.setText("Telephonie manager: " + Settings.System.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID));
+
+        ImageView image = (ImageView) findViewById(R.id.image);
+        File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "picture.png");
+        image.setImageBitmap(BitmapFactory.decodeFile(f.getPath()));
 
         Button button = (Button)findViewById(R.id.buttLogout);
         button.setText(R.string.logout);
