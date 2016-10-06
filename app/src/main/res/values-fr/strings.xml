@@ -6,6 +6,7 @@
     <string name="psw">Mot de passe</string>
     <string name="signin">Connexion</string>
     <string name="wronglogin">Connexion échouée</string>
+    <string name="wrongemail">Email ne contient pas de @</string>
     <string name="wrong">Email or mot de passe faux</string>
     <string name="good">Connexion valide, Bienvenue!</string>
     <string name="bye">Au revoir!</string>
