@@ -25,4 +25,18 @@ Il faut créer un second layout, en mode paysage (depuis la gui de android studi
 Ensuite ce layout doit être déposé dans un folder "layout-land" qui permet d'utiliser l'application en mode paysage et avoir un autre affichage.
 
 ### 6.
-L'utilisation d'un RelativeLayout n'est pas très cmpliquée. Cependant il nosu faut passer en mode text de l'éditeur d'interface, car l'éditeur graphique est limité. Pour utiliser le RelativeLayout à la place du LineaireLayout il suffit de substituer le nom du 2ème par le 1er.De retour en mode graphique nous pouvons voir que le layout à changé, tout est en désordre. Il faut réaligner les éléments les uns par rapport aux autres car nous sommes en positionnement relatif.
+L'utilisation d'un RelativeLayout n'est pas très cmpliquée. Cependant il nosu faut passer en mode text de l'éditeur d'interface, car l'éditeur graphique est limité. Pour utiliser le RelativeLayout à la place du LineaireLayout il suffit de
+substituer le nom du 2ème par le 1er.De retour en mode graphique nous pouvons voir que le layout à changé, tout est en désordre. Il faut réaligner les éléments les uns par rapport aux autres car nous sommes en positionnement relatif.
+
+### 7.
+Voilà une brève explication du moment où chaque fonction est applé:
+  - onCreate(): Appelé au moment où l'activité est crée (mais non démmaré)
+  - onStart(): Appellé au moment où l'activité démmare
+  - onResume(): Appellé au moment où l'activité a été mis en pause et se relance (L'utilisateur retourne a une activité sur son écran)
+  - onPause(): Appellé au moment où l'activité est mies en pause (Ex: une autre activité arrive sur l'écran)
+  - onStop(): Appellé au moment où l'activité s'arrète (Elle n'est plus visible à l'écran)
+  - onRestart(): Appellé au moment où l'activité redémmare (L'utilisateur navigue sur l'activité à nouveau)
+  - onDestroy(): Appellé au moment où l'activité est détruite (L'activité est finis ou est détruite par le système volontairement, pour un crash par exemple)
+
+Si nous utilisions des systèmes externes, nous pourrions utiliser la fonction onCreate() pour crée le lien avec le système et la fonction onDestroy() pour détruire ce lien quand l'activité est finis,
+ce qui éviterait ainsi des fuites de mémoire ou de laisser des liens vers des systèmes ouvert.

@@ -11,6 +11,7 @@ public class BasicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("The activity is creating!");
         setContentView(R.layout.activity_basic);
 
         Bundle extras = getIntent().getExtras();
@@ -25,6 +26,42 @@ public class BasicActivity extends AppCompatActivity {
         button.setText(R.string.logout);
         button.setOnClickListener(event -> click());
 
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        System.out.println("The activity is starting!");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        System.out.println("The activity is resuming!");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        System.out.println("The activity is pausing!");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        System.out.println("The activity is stoping!");
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        System.out.println("The activity is destroying!");
+    }
+
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        System.out.println("The activity is restarting!");
     }
 
     @Override
