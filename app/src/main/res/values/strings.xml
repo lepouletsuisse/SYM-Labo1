@@ -11,5 +11,7 @@
     <string name="title_activity_basic">BasicActivity</string>
     <string name="bye">Goodbye!</string>
     <string name="logout">Logout</string>
+    <string name="backed">You pressed the back button!</string>
+    <string name="normalBack">you backed in the correct way!</string>
 
 </resources>

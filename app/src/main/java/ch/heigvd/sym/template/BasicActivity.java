@@ -1,11 +1,10 @@
 package ch.heigvd.sym.template;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class BasicActivity extends AppCompatActivity {
 
@@ -22,20 +21,23 @@ public class BasicActivity extends AppCompatActivity {
         TextView text_pass = (TextView)findViewById(R.id.textPass);
         text_pass.setText("Password: " + extras.getString("passwordGiven"));
 
-        Button button = (Button)findViewById(R.id.buttOk);
-        button.setText(R.string.app_name);
+        Button button = (Button)findViewById(R.id.buttLogout);
+        button.setText(R.string.logout);
         button.setOnClickListener(event -> click());
 
     }
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(BasicActivity.this, getResources().getString(R.string.logout), Toast.LENGTH_LONG).show();
+        getIntent().putExtra("ResultValue", "0");
+        setResult(Activity.RESULT_CANCELED, getIntent());
         finish();
     }
 
     private void click(){
-        Toast.makeText(BasicActivity.this, getResources().getString(R.string.app_name), Toast.LENGTH_LONG).show();
+        getIntent().putExtra("ResultValue", "1");
+        setResult(Activity.RESULT_OK, getIntent());
+        finish();
     }
 
 }

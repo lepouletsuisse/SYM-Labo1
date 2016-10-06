@@ -25,6 +25,7 @@
  */
 package ch.heigvd.sym.template;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     // Just for test purposes : please destroy !
 	private static final String validEmail      = "a";
 	private static final String validPassword   = "a";
+
+	static final int RESULT_BASIC = 1;
 
     // GUI elements
 	private EditText email      = null;
@@ -72,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
 				 * combination given is valid or not
 				 */
 				String mail = email.getText().toString();
-				String passwd = pass.getText().toString();; //TODO read password from EditText
+				String passwd = pass.getText().toString();
 				if (isValid(mail, passwd)) {
 					Intent intent = new Intent(getBaseContext(), ch.heigvd.sym.template.BasicActivity.class);
 					intent.putExtra("emailEntered", mail);
 				 	intent.putExtra("passwordGiven", passwd);
 					Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
-				 	startActivity(intent);
+				 	startActivityForResult(intent, RESULT_BASIC);
 					/* Ok, valid combination, do something or launch another activity...
 					 * The current activity could be finished, but it is not mandatory.
 					 * To launch activity MyActivity.class, try something like :
@@ -133,6 +136,20 @@ public class MainActivity extends AppCompatActivity {
 	public void onBackPressed() {
 		Toast.makeText(MainActivity.this, getResources().getString(R.string.bye), Toast.LENGTH_LONG).show();
 		finish();
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data){
+		if(requestCode == RESULT_BASIC){
+			if(resultCode == Activity.RESULT_OK){
+				Toast.makeText(MainActivity.this, getResources().getString(R.string.normalBack), Toast.LENGTH_LONG).show();
+				//Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
+			}
+			if(resultCode == Activity.RESULT_CANCELED){
+				Toast.makeText(MainActivity.this, getResources().getString(R.string.backed), Toast.LENGTH_LONG).show();
+				//Toast.makeText(MainActivity.this, "The result is: " + data.getExtras().getString("ResultValue"), Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 	
 }
